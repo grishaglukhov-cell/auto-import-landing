@@ -899,8 +899,51 @@
         outline-offset: 2px;
       }
     </style>
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+      (function (m, e, t, r, i, k, a) {
+        m[i] =
+          m[i] ||
+          function () {
+            (m[i].a = m[i].a || []).push(arguments);
+          };
+        m[i].l = 1 * new Date();
+        for (var j = 0; j < document.scripts.length; j++) {
+          if (document.scripts[j].src === r) {
+            return;
+          }
+        }
+        ((k = e.createElement(t)),
+          (a = e.getElementsByTagName(t)[0]),
+          (k.async = 1),
+          (k.src = r),
+          a.parentNode.insertBefore(k, a));
+      })(
+        window,
+        document,
+        "script",
+        "https://mc.yandex.ru/metrika/tag.js",
+        "ym",
+      );
+
+      ym(111459129, "init", {
+        clickmap: true,
+        trackLinks: true,
+        accurateTrackBounce: true,
+        webvisor: true,
+      });
+    </script>
+    <!-- /Yandex.Metrika counter -->
   </head>
   <body>
+    <noscript
+      ><div>
+        <img
+          src="https://mc.yandex.ru/watch/111459129"
+          style="position: absolute; left: -9999px"
+          alt=""
+        /></div
+    ></noscript>
     <header>
       <div class="wrap nav">
         <div class="logo"><span class="logo-mark">Д</span></div>
@@ -1404,13 +1447,13 @@
 
       document.querySelectorAll('a[href^="tel:"]').forEach((b) => {
         b.addEventListener("click", () => {
-          /* TODO: ym(XXXXXX,'reachGoal','call_click'); */
+          if (window.ym) ym(111459129, "reachGoal", "call_click");
         });
       });
 
       document.querySelectorAll(".btn--max").forEach((b) => {
         b.addEventListener("click", () => {
-          /* TODO: ym(XXXXXX,'reachGoal','max_click'); */
+          if (window.ym) ym(111459129, "reachGoal", "max_click");
         });
       });
     </script>
